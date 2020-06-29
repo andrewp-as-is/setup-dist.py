@@ -22,9 +22,23 @@ def get_install_requires():
     return []
 
 
+def get_keywords():
+    if 'SETUP_KEYWORDS' in os.environ:
+        return os.environ.get('SETUP_KEYWORDS').strip()
+    if 'SETUP_KEYWORDS_FILE' in os.environ:
+        return open(os.environ.get('SETUP_KEYWORDS_FILE')).read().strip()
+
+
+def get_description():
+    if 'SETUP_DESCRIPTION' in os.environ:
+        return os.environ.get('SETUP_DESCRIPTION').strip()
+    if 'SETUP_DESCRIPTION_FILE' in os.environ:
+        return open(os.environ.get('SETUP_DESCRIPTION_FILE')).read().strip()
+
+
 def get_long_description():
     if 'SETUP_LONG_DESCRIPTION' in os.environ:
-        return os.environ.get('SETUP_LONG_DESCRIPTION')
+        return os.environ.get('SETUP_LONG_DESCRIPTION').strip()
     if 'SETUP_LONG_DESCRIPTION_FILE' in os.environ:
         return open(os.environ.get('SETUP_LONG_DESCRIPTION_FILE')).read().strip()
     for path in ['README.md', 'README.rst']:
@@ -65,8 +79,8 @@ def get_kwargs():
     return dict(
         name=get_name(),
         version=os.getenv('SETUP_VERSION', None),
-        keywords=os.getenv('SETUP_KEYWORDS', ''),
-        description=os.getenv('SETUP_DESCRIPTION'),
+        keywords=get_keywords(),
+        description=get_description(),
         long_description=get_long_description(),
         long_description_content_type=get_long_description_content_type(),
         license=os.getenv('SETUP_LICENSE'),

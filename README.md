@@ -35,6 +35,7 @@ key|default value|environment variable
 `install_requires`|`requirements.txt` lines|`SETUP_INSTALL_REQUIRES` or `SETUP_INSTALL_REQUIRES_FILE`
 `classifiers`|`classifiers.txt` lines|`SETUP_CLASSIFIERS` or `SETUP_CLASSIFIERS_FILE`
 `scripts`|`scripts/` files|`SETUP_SCRIPTS`
+`keywords`|`None`|`SETUP_KEYWORDS` or `SETUP_KEYWORDS_FILE`
 `description`|`None`|`SETUP_DESCRIPTION`
 `long_description`|`README.md` or `README.rst` content|`SETUP_LONG_DESCRIPTION` or `SETUP_LONG_DESCRIPTION_FILE`
 `license`|`None`|`SETUP_LICENSE`
