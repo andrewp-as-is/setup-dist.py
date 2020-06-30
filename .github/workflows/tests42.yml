@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v1
-    - uses: andrewp-as-is/tests42-action@master
+    - uses: andrewp-as-is/python-tests42-action@master
